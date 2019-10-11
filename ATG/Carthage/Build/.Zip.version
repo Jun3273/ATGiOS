@@ -1,0 +1,10 @@
+{
+  "commitish" : "1.1.0",
+  "iOS" : [
+    {
+      "name" : "Zip",
+      "hash" : "a35bbb0af47c97c068690eaf7120fdec42286b024d30b85d93bc65ea8318c397",
+      "swiftToolchainVersion" : "4.2.1 (swiftlang-1000.11.42 clang-1000.11.45.1)"
+    }
+  ]
+}
