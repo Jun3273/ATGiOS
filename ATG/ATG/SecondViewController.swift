@@ -21,6 +21,7 @@ class SecondViewController: UIViewController, UIDocumentPickerDelegate {
     var RouteName = 0
     var SlctedRouteURL: URL?
     var DidTryToRemove = false
+    var ConfirmRemove = false
     
     @IBOutlet weak var Label: UILabel!
     @IBOutlet weak var SelectLbl: UILabel!
@@ -63,7 +64,14 @@ class SecondViewController: UIViewController, UIDocumentPickerDelegate {
             
             let manager = FileManager()
             
-            if DidTryToRemove{
+            if DidTryToRemove && !ConfirmRemove{
+                let utter = AVSpeechUtterance(string: "Are you sure that you want to remove the route? Long press to confirm. Single tap to cancel.")
+                utter.rate = Float(rate)
+                synth.speak(utter)
+                
+                ConfirmRemove = true
+            }
+            else if DidTryToRemove && ConfirmRemove{
                 do{
                     try manager.removeItem(at: SlctedRouteURL!)
                     
@@ -102,9 +110,7 @@ class SecondViewController: UIViewController, UIDocumentPickerDelegate {
             if !DidTryToRemove {
                
                 let utter = AVSpeechUtterance(string: "You are about to remove a route. Long press to continue. Single tap to cancel.")
-/*
- heres where we need to ask again whether the route should be cancelled (2nd CONFIRMATION)
-*/
+
                 utter.rate = Float(rate)
                 synth.speak(utter)
                 
@@ -119,6 +125,7 @@ class SecondViewController: UIViewController, UIDocumentPickerDelegate {
         if sender.state == .ended{
             if DidTryToRemove{
                 DidTryToRemove = false
+                ConfirmRemove = false
                 
                 let utter = AVSpeechUtterance(string: "Route removal canceled.")
                 utter.rate = Float(rate)
