@@ -106,8 +106,15 @@ class SecondViewController: UIViewController, UIDocumentPickerDelegate {
     @IBAction func DoubleTap(_ sender: UITapGestureRecognizer) {
         if sender.state == .ended {
             
+            if (Routes.count == 0) || (Routes == nil){
+                
+                let utter = AVSpeechUtterance(string: "You do not have any routes selected. Please select a route to delete.")
+                
+                utter.rate = Float(rate)
+                synth.speak(utter)
+            }
             
-            if !DidTryToRemove {
+            else if !DidTryToRemove {
                
                 let utter = AVSpeechUtterance(string: "You are about to remove a route. Long press to continue. Single tap to cancel.")
 
