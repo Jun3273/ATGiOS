@@ -13,7 +13,7 @@
         <!--OptionsController-->
         <scene sceneID="79U-Sx-Lhc">
             <objects>
-                <viewController title="OptionsController" id="hn3-D2-SDp" customClass="OptionsController" customModule="ATG_Trial_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="OptionsController" id="hn3-D2-SDp" customClass="OptionsController" customModule="ATG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DQi-eb-XxU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,7 +87,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ATG_Trial_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ATG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -142,7 +142,7 @@
         <!--Second View Controller-->
         <scene sceneID="QJE-DA-l4r">
             <objects>
-                <viewController id="LwC-8P-X7d" customClass="SecondViewController" customModule="ATG_Trial_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LwC-8P-X7d" customClass="SecondViewController" customModule="ATG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kV1-Dd-LuR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -238,7 +238,7 @@
         <!--Third View Controller-->
         <scene sceneID="7Cc-P1-Yjh">
             <objects>
-                <viewController id="Ze4-tv-wvh" customClass="ThirdViewController" customModule="ATG_Trial_1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ze4-tv-wvh" customClass="ThirdViewController" customModule="ATG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="deb-jj-sal">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
