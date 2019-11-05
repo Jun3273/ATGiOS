@@ -22,6 +22,7 @@ class SecondViewController: UIViewController, UIDocumentPickerDelegate {
     var SlctedRouteURL: URL?
     var DidTryToRemove = false
     var ConfirmRemove = false
+    var RouteSelectCt = 0
     
     @IBOutlet weak var Label: UILabel!
     @IBOutlet weak var SelectLbl: UILabel!
@@ -106,7 +107,7 @@ class SecondViewController: UIViewController, UIDocumentPickerDelegate {
     @IBAction func DoubleTap(_ sender: UITapGestureRecognizer) {
         if sender.state == .ended {
             
-            if (Routes.count == 0) || (Routes == nil) || (RouteName == 0){
+            if (Routes.count == 0) || (Routes == nil) || ((RouteName == 0) && (RouteSelectCt == 0)){
                 
                 let utter = AVSpeechUtterance(string: "You do not have any routes selected. Please select a route to delete.")
                 
@@ -176,6 +177,7 @@ class SecondViewController: UIViewController, UIDocumentPickerDelegate {
                 SlctedRouteURL = Routes[RouteName]
                 
                 RouteName += 1
+                RouteSelectCt += 1
             }
             else{
                 
@@ -188,6 +190,7 @@ class SecondViewController: UIViewController, UIDocumentPickerDelegate {
                 SlctedRouteURL = Routes[RouteName]
                 
                 RouteName = 0
+                RouteSelectCt += 1
             }
             
         }

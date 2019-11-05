@@ -48,8 +48,8 @@ class ThirdViewController: UIViewController, CLLocationManagerDelegate {
             let utter = AVSpeechUtterance(string: LastDescription!)
             utter.rate = Float(rate)
             synth.speak(utter)
-            print(waypointNum)
-            print(LastWaypoint) //for the last waypoint if it is a global variable.
+            //print(waypointNum)
+            //print(LastWaypoint) //for the last waypoint if it is a global variable.
         }
     }
     func getNextNode(NextWaypointNum: Int) -> waypoint {
@@ -154,7 +154,6 @@ class ThirdViewController: UIViewController, CLLocationManagerDelegate {
         let MtrsToLat = 0.0000090054
         let MtrsToLong = 0.000011797
         
-        //var LastWaypoint = false    // sets the last waypoint variable to false
         
         print(TargetWaypoint.longitude)
         print(TargetWaypoint.latitude)
@@ -184,7 +183,7 @@ class ThirdViewController: UIViewController, CLLocationManagerDelegate {
         }
         else{
             print("not so good")
-            print("Last waypoint is", LastWaypoint)
+            //print("Last waypoint is", LastWaypoint)
         }
     }
     
