@@ -26,6 +26,8 @@ class ThirdViewController: UIViewController, CLLocationManagerDelegate {
         //This struct is used to easily store info for a waypoint
         var latitude: Double = 0 //latitude of the waypoint
         var longitude: Double = 0 //longitude of the waypoint
+        var targetLatitude: Double = 0 //latitude of target
+        var targetLongitude: Double = 0 //longitude of target
         var radius: Double = 0 //radius of the waypoint
         var name: String = "" //Name of the waypoint
         var description: String = "" //The description that is read to the user
@@ -35,6 +37,8 @@ class ThirdViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var CrntRouteLbl: UILabel!
     @IBOutlet weak var LatLbl: UILabel!
     @IBOutlet weak var LongLbl: UILabel!
+    @IBOutlet weak var TargetLatLbl: UILabel!
+    @IBOutlet weak var TargetLongLbl: UILabel!
     
     @IBAction func SwipeRight(_ sender: UISwipeGestureRecognizer) {
     
@@ -66,6 +70,8 @@ class ThirdViewController: UIViewController, CLLocationManagerDelegate {
         //Assigns the info to the waypoint:
         NextWaypoint.latitude = Double(WaypointPiecesFirstLine.components(separatedBy: " ")[0])!
         NextWaypoint.longitude = Double(WaypointPiecesFirstLine.components(separatedBy: " ")[1])!
+        /*NextWaypoint.targetLatitude = Double(WaypointPiecesFirstLine.components(separatedBy: " ")[0])!
+        NextWaypoint.targetLongitude = Double(WaypointPiecesFirstLine.components(separatedBy: " ")[1])!*/
         NextWaypoint.radius = Double(WaypointPiecesFirstLine.components(separatedBy: " ")[2].dropLast())!
         NextWaypoint.name = WaypointPieces[4]
         
@@ -148,8 +154,12 @@ class ThirdViewController: UIViewController, CLLocationManagerDelegate {
         let latitude = String(format: "%.5f", lastLocation.coordinate.latitude)
         let longitude = String(format: "%.5f", lastLocation.coordinate.longitude)
         LongLbl.text = "\(longitude)"
-        
         LatLbl.text = "\(latitude)"
+        
+        let targetLatitude = String(format: "%.5f", TargetWaypoint.latitude)
+        let targetLongitude = String(format: "%.5f", TargetWaypoint.longitude)
+        TargetLatLbl.text = "\(targetLatitude)"
+        TargetLongLbl.text = "\(targetLongitude)"
         
         let MtrsToLat = 0.0000090054
         let MtrsToLong = 0.000011797
